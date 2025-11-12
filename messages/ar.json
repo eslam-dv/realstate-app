@@ -1,0 +1,63 @@
+{
+  "Metadata": {
+    "title": "موقع عقاري",
+    "description": "أعثر على منزل أحلامك"
+  },
+  "HomePage": {
+    "title": "اكتشف عقارك المثالي مع إستيتين",
+    "description": "رحلتك للعثور على العقار المثالي تبدأ هنا. استكشف قوائمنا للعثور على المنزل الذي يناسب أحلامك.",
+    "learnMore": "اعرف المزيد",
+    "browseProperties": "تصفح العقارات",
+    "happyCustomers": "عملاء سعداء",
+    "propertiesForClients": "عقارات للعملاء",
+    "yearsOfExperience": "سنوات الخبرة",
+    "linkCards": {
+      "find": "اعثر على منزل أحلامك",
+      "unlock": "اكتشف قيمة العقار",
+      "effortless": "إدارة العقارات بسهولة",
+      "smart": "استثمار ذكي، قرارات مدروسة"
+    }
+  },
+  "Footer": {
+    "brand": "إستيتين",
+    "emailPlaceholder": "أدخل بريدك الإلكتروني",
+    "sections": {
+      "home": "الرئيسية",
+      "about": "من نحن",
+      "properties": "العقارات",
+      "services": "الخدمات",
+      "contact": "اتصل بنا"
+    },
+    "homeLinks": {
+      "hero": "القسم الرئيسي",
+      "features": "المميزات",
+      "properties": "العقارات",
+      "testimonials": "آراء العملاء",
+      "faqs": "الأسئلة الشائعة"
+    },
+    "aboutLinks": {
+      "story": "قصتنا",
+      "works": "أعمالنا",
+      "how": "كيف نعمل",
+      "team": "فريقنا",
+      "clients": "عملاؤنا"
+    },
+    "propertiesLinks": {
+      "portfolio": "المحفظة",
+      "categories": "الفئات"
+    },
+    "servicesLinks": {
+      "valuation": "إتقان التقييم",
+      "marketing": "التسويق الاستراتيجي",
+      "negotiation": "مهارة التفاوض",
+      "closing": "نجاح الإغلاق",
+      "management": "إدارة الممتلكات"
+    },
+    "contactLinks": {
+      "form": "نموذج الاتصال",
+      "offices": "مكاتبنا"
+    },
+    "copyright": "©2023 إستيتين. جميع الحقوق محفوظة.",
+    "terms": "الشروط والأحكام"
+  }
+}

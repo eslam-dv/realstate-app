@@ -1,0 +1,49 @@
+[
+  {
+    "name": "Sunset Villa",
+    "description": "A luxurious villa with stunning sunset views.",
+    "location": "Malibu, CA",
+    "bedrooms": 5,
+    "bathrooms": 4,
+    "listingType": "sale",
+    "propertyType": "villa",
+    "price": 3500000,
+    "previewImage": "images/sunset-villa-preview.jpg",
+    "imageGallery": [
+      "images/sunset-villa-1.jpg",
+      "images/sunset-villa-2.jpg",
+      "images/sunset-villa-3.jpg"
+    ]
+  },
+  {
+    "name": "Downtown Apartment",
+    "description": "Modern apartment in the heart of the city.",
+    "location": "New York, NY",
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "listingType": "rental",
+    "propertyType": "apartment",
+    "price": 4500,
+    "previewImage": "images/downtown-apartment-preview.jpg",
+    "imageGallery": [
+      "images/downtown-apartment-1.jpg",
+      "images/downtown-apartment-2.jpg"
+    ]
+  },
+  {
+    "name": "Suburban Home",
+    "description": "Cozy home in a quiet suburban neighborhood.",
+    "location": "Austin, TX",
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "listingType": "sale",
+    "propertyType": "home",
+    "price": 520000,
+    "previewImage": "images/suburban-home-preview.jpg",
+    "imageGallery": [
+      "images/suburban-home-1.jpg",
+      "images/suburban-home-2.jpg",
+      "images/suburban-home-3.jpg"
+    ]
+  }
+]

@@ -1,65 +1,156 @@
+import { useTranslations } from "next-intl";
 import Image from "next/image";
+import Link from "next/link";
+import {
+  BuildingStorefrontIcon,
+  BanknotesIcon,
+  BuildingOffice2Icon,
+  SunIcon,
+  ArrowUpRightIcon,
+  SparklesIcon,
+} from "@heroicons/react/24/solid";
+import PropertiesCarousel from "@/components/PropertiesCarousel";
 
 export default function Home() {
+  const t = useTranslations("HomePage");
+  const properties = [
+    {
+      image: "/images/property-1.png",
+      title: "Seaside Serenity House",
+      description:
+        "A stunning 4-bedroom 3-bathroom house in a peacful seaside location",
+      bathrooms: 3,
+      bedrooms: 4,
+      type: "House",
+      price: "550,000",
+    },
+    {
+      image: "/images/property-2.png",
+      title: "Mountain Retreat Villa",
+      description:
+        "A luxurious 5-bedroom 4-bathroom villa in a serene mountain location",
+      bathrooms: 4,
+      bedrooms: 5,
+      type: "Villa",
+      price: "1,250,000",
+    },
+    {
+      image: "/images/property-3.png",
+      title: "Cityscape Oasis Apartment",
+      description:
+        "A cozy 2-bedroom 1-bathroom apartment in a vibrant city location",
+      bathrooms: 1,
+      bedrooms: 2,
+      type: "Apartment",
+      price: "400,000",
+    },
+    {
+      image: "/images/property-4.png",
+      title: "Beachfront Retreat Villa",
+      description:
+        "A stunning 4-bedroom 3-bathroom villa in a peacful seaside location",
+      bathrooms: 3,
+      bedrooms: 4,
+      type: "Villa",
+      price: "550,000",
+    },
+  ];
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <>
+      {/* Hero Section */}
+      <section className="flex flex-col md:flex-row-reverse min-h-[calc(100vh-72px)]">
+        <div className="w-full md:w-1/2">
+          <Image
+            src="/images/home-image.png"
+            alt="skyscraper"
+            width={600}
+            height={600}
+            className="object-cover w-full h-1/2 md:h-full"
+          />
+        </div>
+        <div className="flex flex-col items-center gap-10 justify-center py-10 w-full md:w-1/2 px-4">
+          <h1 className="text-5xl font-semibold">{t("title")}</h1>
+          <p className="text-text-alt">{t("description")}</p>
+          <div className="flex flex-col md:flex-row items-start gap-5 w-full">
+            <button className="px-6 py-3 border border-text-alt/20 rounded-md cursor-pointer hover:bg-bg-alt/90 w-full md:w-fit">
+              {t("learnMore")}
+            </button>{" "}
+            <button className="px-6 py-3 bg-brand rounded-md cursor-pointer hover:bg-brand/80  w-full md:w-fit">
+              {t("browseProperties")}
+            </button>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-5 w-full">
+            <div className="bg-bg-alt p-5 rounded-md border border-text-alt/20">
+              <p className="text-3xl font-semibold">200+</p>
+              <p className="text-text-alt">{t("happyCustomers")}</p>
+            </div>
+            <div className="bg-bg-alt p-5 rounded-md border border-text-alt/20">
+              <p className="text-3xl font-semibold">10k+</p>
+              <p className="text-text-alt">{t("propertiesForClients")}</p>
+            </div>
+            <div className="bg-bg-alt p-5 rounded-md border border-text-alt/20 col-span-2 md:col-span-1 text-center md:text-start">
+              <p className="text-3xl font-semibold">16+</p>
+              <p className="text-text-alt">{t("yearsOfExperience")}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* Link cards */}
+      <section className="p-4 border border-5 border-bg-alt shadow-[inset_0px_0px_1px_1px_] shadow-text-alt/20 rounded-md">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
+          <div className="relative bg-bg-alt p-5 rounded-md border border-text-alt/10 text-center flex flex-col gap-5 items-center justify-center">
+            <Link href="" className="absolute top-3 right-3">
+              <ArrowUpRightIcon className="size-8 text-text-alt/40" />
+            </Link>
+            <BuildingStorefrontIcon className="size-8 text-brand" />
+            <p className="text-lg">{t("linkCards.find")}</p>
+          </div>
+          <div className="relative bg-bg-alt p-5 rounded-md border border-text-alt/10 text-center flex flex-col gap-5 items-center justify-center">
+            <Link href="" className="absolute top-3 right-3">
+              <ArrowUpRightIcon className="size-8 text-text-alt/40" />
+            </Link>
+            <BanknotesIcon className="size-8 text-brand" />
+            <p className="text-lg">{t("linkCards.unlock")}</p>
+          </div>
+          <div className="relative bg-bg-alt p-5 rounded-md border border-text-alt/10 text-center flex flex-col gap-5 items-center justify-center">
+            <Link href="" className="absolute top-3 right-3">
+              <ArrowUpRightIcon className="size-8 text-text-alt/40" />
+            </Link>
+            <BuildingOffice2Icon className="size-8 text-brand" />
+            <p className="text-lg">{t("linkCards.effortless")}</p>
+          </div>
+          <div className="relative bg-bg-alt p-5 rounded-md border border-text-alt/10 text-center flex flex-col gap-5 items-center justify-center">
+            <Link href="" className="absolute top-3 right-3">
+              <ArrowUpRightIcon className="size-8 text-text-alt/40" />
+            </Link>
+            <SunIcon className="size-8 text-brand" />
+            <p className="text-lg">{t("linkCards.smart")}</p>
+          </div>
+        </div>
+      </section>
+      {/* Featured Section */}
+      <section className="container container-md mx-auto py-20 px-4">
+        <div className="flex items-center gap-2">
+          <SparklesIcon className="size-8 text-text-alt/30 mb-2" />
+          <SparklesIcon className="size-6 text-text-alt/30 mb-2" />
+          <SparklesIcon className="size-4 text-text-alt/30 mb-2" />
+        </div>
+        <h1 className="text-4xl font-semibold mb-4">Featured Properties</h1>
+        <div className="flex items-center justify-between">
+          <p className="md:basis-2/3 text-text-alt">
+            Explore our handpicked selection of featured properties. Each
+            listing offers a glimpse into exceptional homes and investments
+            available through Estatein.
           </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href=""
+            className="hidden md:block bg-bg-alt py-3 px-5 rounded-md border border-text-alt/20"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+            View All Products
+          </Link>
         </div>
-      </main>
-    </div>
+        <PropertiesCarousel properties={properties} />
+      </section>
+    </>
   );
 }

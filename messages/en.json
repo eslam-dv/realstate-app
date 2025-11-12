@@ -1,0 +1,63 @@
+{
+  "Metadata": {
+    "title": "Realstate App",
+    "description": "Find your dream home"
+  },
+  "HomePage": {
+    "title": "Discover Your Dream Property with Estatein",
+    "description": "Your journey to finding the perfect property begins here. Explore our listings to find the home that matches your dreams.",
+    "learnMore": "Learn More",
+    "browseProperties": "Browse Properties",
+    "happyCustomers": "Happy Customers",
+    "propertiesForClients": "Properties for Clients",
+    "yearsOfExperience": "Years of Experience",
+    "linkCards": {
+      "find": "Find Your Dream Home",
+      "unlock": "Unlock Property Value",
+      "effortless": "Effortless Property Management",
+      "smart": "Smart Investment, Informed Decisions"
+    }
+  },
+  "Footer": {
+    "brand": "Estatein",
+    "emailPlaceholder": "Enter your email",
+    "sections": {
+      "home": "Home",
+      "about": "About Us",
+      "properties": "Properties",
+      "services": "Services",
+      "contact": "Contact Us"
+    },
+    "homeLinks": {
+      "hero": "Hero Section",
+      "features": "Features",
+      "properties": "Properties",
+      "testimonials": "Testimonials",
+      "faqs": "FAQs"
+    },
+    "aboutLinks": {
+      "story": "Our Story",
+      "works": "Our Works",
+      "how": "How it Works",
+      "team": "Our Team",
+      "clients": "Our Clients"
+    },
+    "propertiesLinks": {
+      "portfolio": "Portfolio",
+      "categories": "Categories"
+    },
+    "servicesLinks": {
+      "valuation": "Valuation Mastery",
+      "marketing": "Strategic Marketing",
+      "negotiation": "Negotiation Wizardy",
+      "closing": "Closing Success",
+      "management": "Property Management"
+    },
+    "contactLinks": {
+      "form": "Contact Form",
+      "offices": "Our Offices"
+    },
+    "copyright": "©2023 Estatein. All rights reserved.",
+    "terms": "Terms & Conditions"
+  }
+}
