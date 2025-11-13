@@ -1,4 +1,4 @@
-import { useTranslations } from "next-intl";
+import { getLocale, getTranslations } from "next-intl/server";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -7,12 +7,14 @@ import {
   BuildingOffice2Icon,
   SunIcon,
   ArrowUpRightIcon,
-  SparklesIcon,
 } from "@heroicons/react/24/solid";
-import PropertiesCarousel from "@/components/PropertiesCarousel";
+import SectionTitle from "@/components/SectionTitle";
+import CarouselSectionWrapper from "@/components/CarouselSectionWrapper";
 
-export default function Home() {
-  const t = useTranslations("HomePage");
+export default async function Home() {
+  const locale = (await getLocale()) || "en";
+  const direction = locale === "ar" ? "rtl" : "ltr";
+  const t = await getTranslations("HomePage");
   const properties = [
     {
       image: "/images/property-1.png",
@@ -130,26 +132,28 @@ export default function Home() {
       </section>
       {/* Featured Section */}
       <section className="container container-md mx-auto py-20 px-4">
-        <div className="flex items-center gap-2">
-          <SparklesIcon className="size-8 text-text-alt/30 mb-2" />
-          <SparklesIcon className="size-6 text-text-alt/30 mb-2" />
-          <SparklesIcon className="size-4 text-text-alt/30 mb-2" />
-        </div>
-        <h1 className="text-4xl font-semibold mb-4">Featured Properties</h1>
-        <div className="flex items-center justify-between">
-          <p className="md:basis-2/3 text-text-alt">
-            Explore our handpicked selection of featured properties. Each
-            listing offers a glimpse into exceptional homes and investments
-            available through Estatein.
-          </p>
-          <Link
-            href=""
-            className="hidden md:block bg-bg-alt py-3 px-5 rounded-md border border-text-alt/20"
-          >
-            View All Products
-          </Link>
-        </div>
-        <PropertiesCarousel properties={properties} />
+        <SectionTitle
+          title={t("featuredSection.title")}
+          description={t("featuredSection.description")}
+          viewAll={t("featuredSection.viewAll")}
+        />
+
+        <CarouselSectionWrapper
+          items={properties}
+          viewAll={t("featuredSection.viewAll")}
+          viewAllLink=""
+          direction={direction}
+        />
+      </section>
+      {/* Testimonials Section */}
+      <section className="container container-md mx-auto pb-20 px-4">
+        <SectionTitle
+          title="What Our Clients Say"
+          description="Read the success stories and heartful testimonials from our valued
+          clients. Discover why they choose Estatein for their real estate
+          needs."
+          viewAll="View All Testimonials"
+        />
       </section>
     </>
   );

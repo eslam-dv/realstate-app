@@ -1,6 +1,7 @@
 import { BuildingOfficeIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
 import Link from "next/link";
+import { Bath, Bed } from "./icons";
 
 export interface PropertyType {
   title: string;
@@ -33,8 +34,8 @@ export default function PropertyCard({
       <h3 className="text-2xl font-semibold">{title}</h3>
       <p className="text-text-alt text-sm">{description}</p>
       <div className="flex items-center gap-2 w-fit flex-wrap">
-        <div className="pill">{bedrooms}-Bedroom</div>
-        <div className="pill">{bathrooms}-Bathroom</div>
+        <div className="pill"><Bed className="size-4" />{bedrooms}-Bedroom</div>
+        <div className="pill"><Bath className="size-4" />{bathrooms}-Bathroom</div>
         <div className="pill">
           <BuildingOfficeIcon className="size-4" />
           {type}

@@ -16,7 +16,13 @@
       "unlock": "Unlock Property Value",
       "effortless": "Effortless Property Management",
       "smart": "Smart Investment, Informed Decisions"
-    }
+    },
+    "featuredSection": {
+      "title": "Featured Properties",
+      "description": "Explore our handpicked selection of featured properties. Each listing offers a glimpse into exceptional homes and investments available through Estatein.",
+      "viewAll": "View All Products"
+    },
+    "of": "of"
   },
   "Footer": {
     "brand": "Estatein",
