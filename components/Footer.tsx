@@ -2,12 +2,30 @@ import Link from "next/link";
 import Image from "next/image";
 import { EnvelopeIcon, PaperAirplaneIcon } from "@heroicons/react/24/outline";
 import { BxlFacebook, TwitterXFill, LogoLinkedin, YoutubeSolid } from "./icons";
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 
-export default function Footer() {
-  const t = useTranslations("Footer");
+export default async function Footer() {
+  const t = await getTranslations("Footer");
   return (
     <footer className="border border-t border-text-alt/20">
+      {/* Explore Section */}
+      <section className="border-b border-text-alt/20">
+        <div className="container container-md mx-auto py-20 px-4 flex flex-col md:flex-row items-center justify-between gap-5">
+          <div className="basis-2/3">
+            <h3 className="text-4xl font-semibold mb-4">
+              {t("exploreSection.title")}
+            </h3>
+            <p className="text-text-alt">{t("exploreSection.description")}</p>
+          </div>
+          <Link
+            href=""
+            className="btn py-5! px-4! bg-brand hover:bg-brand/80 h-fit w-full md:w-fit text-center"
+          >
+            {t("exploreSection.exploreProperties")}
+          </Link>
+        </div>
+      </section>
+
       <div className="container container-md mx-auto py-10 px-4 md:px-0 flex flex-col lg:flex-row justify-between gap-5">
         <div className="flex flex-col gap-5 items-center lg:items-start">
           <Link href="/" className="flex items-center gap-2">

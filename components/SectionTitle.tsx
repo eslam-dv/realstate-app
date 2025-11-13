@@ -24,7 +24,7 @@ export default function SectionTitle({
         <p className="md:basis-2/3 text-text-alt">{description}</p>
         <Link
           href=""
-          className="hidden md:block bg-bg-alt py-3 px-5 rounded-md border border-text-alt/20"
+          className="hidden md:block bg-bg-alt py-3 px-5 rounded-md border border-text-alt/20 hover:bg-bg"
         >
           {viewAll}
         </Link>

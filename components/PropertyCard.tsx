@@ -13,15 +13,8 @@ export interface PropertyType {
   type: string;
 }
 
-export default function PropertyCard({
-  title,
-  description,
-  image,
-  price,
-  bathrooms,
-  bedrooms,
-  type,
-}: PropertyType) {
+export default function PropertyCard({ property }: { property: PropertyType }) {
+  const { image, title, description, price, bathrooms, bedrooms, type } = property;
   return (
     <div className="border border-text-alt/20 rounded-md p-5 flex flex-col gap-4 select-none">
       <Image
@@ -34,8 +27,14 @@ export default function PropertyCard({
       <h3 className="text-2xl font-semibold">{title}</h3>
       <p className="text-text-alt text-sm">{description}</p>
       <div className="flex items-center gap-2 w-fit flex-wrap">
-        <div className="pill"><Bed className="size-4" />{bedrooms}-Bedroom</div>
-        <div className="pill"><Bath className="size-4" />{bathrooms}-Bathroom</div>
+        <div className="pill">
+          <Bed className="size-4" />
+          {bedrooms}-Bedroom
+        </div>
+        <div className="pill">
+          <Bath className="size-4" />
+          {bathrooms}-Bathroom
+        </div>
         <div className="pill">
           <BuildingOfficeIcon className="size-4" />
           {type}

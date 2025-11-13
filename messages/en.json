@@ -22,11 +22,27 @@
       "description": "Explore our handpicked selection of featured properties. Each listing offers a glimpse into exceptional homes and investments available through Estatein.",
       "viewAll": "View All Products"
     },
-    "of": "of"
+    "of": "of",
+    "testimonialsSection": {
+      "title": "What Our Clients Say",
+      "description": "Read the success stories and heartful testimonials from our valued clients. Discover why they choose Estatein for their real estate needs.",
+      "viewAll": "View All Testimonials"
+    },
+    "FAQsSection": {
+      "title": "Frequently Asked Questions",
+      "description": "Find answers to common questions about Estatein's services, property listings, and the real estate process. We are here to provide clarity and assist you every step of the way",
+      "viewAll": "View All FAQs"
+    }
   },
   "Footer": {
     "brand": "Estatein",
     "emailPlaceholder": "Enter your email",
+    "exploreSection": {
+      "title": "Start Your Real Estate Journey Today",
+      "description": "Your dream property is just a click away. Wether you're looking for a new home, a strategic investment, or expert real estate advice. Estatien is here to assist you every step of the way. Take the first step of the way. Take the first step towards your real estate goals and explore our available properties of get in touch with our team for personalized assistance",
+      "exploreProperties": "Explore Properties"
+    },
+
     "sections": {
       "home": "Home",
       "about": "About Us",

@@ -10,23 +10,24 @@ import {
   CarouselItem,
   type CarouselApi,
 } from "./ui/carousel";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 type Props<T> = {
   items: T[];
-  renderItemAction: (item: T) => React.ReactNode;
+  renderItem: (item: T) => React.ReactNode;
   viewAll: string;
   viewAllLink: string;
-  direction: "ltr" | "rtl";
 };
 
 export default function CarouselSection({
   items,
-  renderItemAction,
+  renderItem,
   viewAll,
   viewAllLink,
-  direction,
 }: Props<T>) {
+  const locale = useLocale();
+  const direction = locale === "en" ? "ltr" : "rtl";
+
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
   const [count, setCount] = useState(0);
@@ -55,7 +56,7 @@ export default function CarouselSection({
     <div className="mt-10">
       <Carousel
         setApi={setApi}
-        className="w-full relative"
+        className="w-full"
         opts={{ loop: true, direction }}
       >
         <CarouselContent>
@@ -64,7 +65,7 @@ export default function CarouselSection({
               key={i}
               className="md:basis-3/5 lg:basis-1/2 xl:basis-1/3"
             >
-              {renderItemAction(p)}
+              {renderItem(p)}
             </CarouselItem>
           ))}
         </CarouselContent>
@@ -76,7 +77,7 @@ export default function CarouselSection({
         </span>
         <Link
           href={viewAllLink}
-          className="md:hidden bg-bg-alt py-3 px-5 rounded-md border border-text-alt/20"
+          className="md:hidden bg-bg-alt py-3 px-5 rounded-md border border-text-alt/20 hover:bg-bg"
         >
           {viewAll}
         </Link>

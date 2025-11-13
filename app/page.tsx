@@ -1,4 +1,4 @@
-import { getLocale, getTranslations } from "next-intl/server";
+import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -9,11 +9,11 @@ import {
   ArrowUpRightIcon,
 } from "@heroicons/react/24/solid";
 import SectionTitle from "@/components/SectionTitle";
-import CarouselSectionWrapper from "@/components/CarouselSectionWrapper";
+import PropertiesCarousel from "@/components/PropertyCarousel";
+import TestimonialsCarousel from "@/components/TestimonialsCarousel";
+import FAQsCarousel from "@/components/FAQsCarousel";
 
 export default async function Home() {
-  const locale = (await getLocale()) || "en";
-  const direction = locale === "ar" ? "rtl" : "ltr";
   const t = await getTranslations("HomePage");
   const properties = [
     {
@@ -55,6 +55,64 @@ export default async function Home() {
       bedrooms: 4,
       type: "Villa",
       price: "550,000",
+    },
+  ];
+  const testimonials = [
+    {
+      rating: 5,
+      comment: "Exceptional Service!",
+      details:
+        "Our experiene with Estatein was outstanding. Their team's dedication and professionalism made finding our dream home a breeze. Highly recommended",
+      name: "John Doe",
+      image: "/images/testimonial-1.png",
+      location: "New York, USA",
+    },
+    {
+      rating: 4,
+      comment: "Great Experience!",
+      details:
+        "I had a great experience working with Estatein. They provided me with the perfect property for my needs. Highly satisfied with their service.",
+      name: "Jane Smith",
+      image: "/images/testimonial-2.png",
+      location: "London, UK",
+    },
+    {
+      rating: 5,
+      comment: "خدمات ممتازة!",
+      details:
+        "تم تجربة استثنائية عند استخدام Estatein. فريقهم يقدمون الخدمات المناسبة لما يحتاجون إليها. توصيات رائعة",
+      name: "أحمد",
+      image: "/images/testimonial-3.png",
+      location: "مصر",
+    },
+    {
+      rating: 4,
+      comment: "تجربة رائعة!",
+      details:
+        "تم تجربة استثنائية عند استخدام Estatein. فريقهم يقدمون الخدمات المناسبة لما يحتاجون إليها. توصيات رائعة",
+      name: "محمد",
+      image: "/images/testimonial-4.png",
+      location: "مصر",
+    },
+  ];
+  const faqs = [
+    {
+      question: "What is Estatein?",
+      answer:
+        "Estatein is a real estate platform that connects buyers and sellers. It provides a platform to buy and sell properties.",
+      readMore: "",
+    },
+    {
+      question: "How does Estatein work?",
+      answer:
+        "Estatein works by connecting buyers and sellers. Buyers can browse through properties and make offers, while sellers can list their properties for sale.",
+      readMore: "",
+    },
+    {
+      question: "What types of properties can I find on Estatein?",
+      answer:
+        "Estatein offers a wide range of properties, including houses, apartments, villas, and land.",
+      readMore: "",
     },
   ];
   return (
@@ -138,21 +196,38 @@ export default async function Home() {
           viewAll={t("featuredSection.viewAll")}
         />
 
-        <CarouselSectionWrapper
+        <PropertiesCarousel
           items={properties}
           viewAll={t("featuredSection.viewAll")}
           viewAllLink=""
-          direction={direction}
         />
       </section>
       {/* Testimonials Section */}
       <section className="container container-md mx-auto pb-20 px-4">
         <SectionTitle
-          title="What Our Clients Say"
-          description="Read the success stories and heartful testimonials from our valued
-          clients. Discover why they choose Estatein for their real estate
-          needs."
-          viewAll="View All Testimonials"
+          title={t("testimonialsSection.title")}
+          description={t("testimonialsSection.description")}
+          viewAll={t("testimonialsSection.viewAll")}
+        />
+
+        <TestimonialsCarousel
+          items={testimonials}
+          viewAll={t("testimonialsSection.viewAll")}
+          viewAllLink=""
+        />
+      </section>
+      {/* FAQs Section */}
+      <section className="container container-md mx-auto pb-20 px-4">
+        <SectionTitle
+          title={t("FAQsSection.title")}
+          description={t("FAQsSection.description")}
+          viewAll={t("FAQsSection.viewAll")}
+        />
+
+        <FAQsCarousel
+          items={faqs}
+          viewAll={t("FAQsSection.viewAll")}
+          viewAllLink=""
         />
       </section>
     </>
