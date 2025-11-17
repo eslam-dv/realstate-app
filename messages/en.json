@@ -8,9 +8,11 @@
     "description": "Your journey to finding the perfect property begins here. Explore our listings to find the home that matches your dreams.",
     "learnMore": "Learn More",
     "browseProperties": "Browse Properties",
-    "happyCustomers": "Happy Customers",
-    "propertiesForClients": "Properties for Clients",
-    "yearsOfExperience": "Years of Experience",
+    "stats": {
+      "happyCustomers": "Happy Customers",
+      "propertiesForClients": "Properties for Clients",
+      "yearsOfExperience": "Years of Experience"
+    },
     "linkCards": {
       "find": "Find Your Dream Home",
       "unlock": "Unlock Property Value",
@@ -33,6 +35,58 @@
       "description": "Find answers to common questions about Estatein's services, property listings, and the real estate process. We are here to provide clarity and assist you every step of the way",
       "viewAll": "View All FAQs"
     }
+  },
+  "AboutPage": {
+    "steps": [
+      {
+        "step": "Step 01",
+        "title": "Discover a World of Possibilities",
+        "content": "Your journey begins with exploring our carefully curated property listings. Using our intuitive search tools, explore properties based on your preferences including location, type, size, and budget."
+      },
+      {
+        "step": "Step 02",
+        "title": "Narrowing Down Your Choices",
+        "content": "Once you've found properties that catch your eye, save them to your shortlist for easy reference. This allows you to compare and revisit your favorites as you make a decision."
+      },
+      {
+        "step": "Step 03",
+        "title": "Personalized Guidance",
+        "content": "Have questions about a property or need more information? Our dedicated team is here to provide expert advice, market insights, and guidance every step of the way."
+      },
+      {
+        "step": "Step 04",
+        "title": "See It for Yourself",
+        "content": "Arrange viewings of the properties you’re interested in. Explore each home in person or through virtual tours, allowing you to get a firsthand feel of your potential new home."
+      },
+      {
+        "step": "Step 05",
+        "title": "Making Informed Decisions",
+        "content": "Before making an offer, our team will assist you by providing market analysis, property evaluations, and expert advice. We'll ensure you feel informed and confident in your choice."
+      },
+      {
+        "step": "Step 06",
+        "title": "Getting the Best Deal",
+        "content": "We'll help you negotiate the best terms and prepare your offer. Our goal is to secure the property at the right price and on favorable terms."
+      }
+    ],
+    "clients": [
+      {
+        "since": "2019",
+        "company": "ABC Corporation",
+        "domain": "Commercial Real Estate",
+        "category": "Luxury Home Development",
+        "whatTheySaid": "Estatein's expertise in finding the perfect office space for our expanding operations was invaluable. They truly understand our business needs.",
+        "websiteLink": ""
+      },
+      {
+        "since": "2018",
+        "company": "GreenTech Enterprises",
+        "domain": "Commercial Real Estate",
+        "category": "Retail Space",
+        "websiteLink": "",
+        "whatTheySaid": "Estateins's ability to identify prime retail locations helped us expand our brand presence. They are a trusted partner in our growth."
+      }
+    ]
   },
   "Footer": {
     "brand": "Estatein",

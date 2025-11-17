@@ -8,9 +8,11 @@
     "description": "رحلتك للعثور على العقار المثالي تبدأ هنا. استكشف قوائمنا للعثور على المنزل الذي يناسب أحلامك.",
     "learnMore": "اعرف المزيد",
     "browseProperties": "تصفح العقارات",
-    "happyCustomers": "عملاء سعداء",
-    "propertiesForClients": "عقارات للعملاء",
-    "yearsOfExperience": "سنوات الخبرة",
+    "stats": {
+      "happyCustomers": "عملاء سعداء",
+      "propertiesForClients": "عقارات للعملاء",
+      "yearsOfExperience": "سنوات الخبرة"
+    },
     "linkCards": {
       "find": "اعثر على منزل أحلامك",
       "unlock": "اكتشف قيمة العقار",

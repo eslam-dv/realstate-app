@@ -12,109 +12,11 @@ import SectionTitle from "@/components/SectionTitle";
 import PropertiesCarousel from "@/components/PropertyCarousel";
 import TestimonialsCarousel from "@/components/TestimonialsCarousel";
 import FAQsCarousel from "@/components/FAQsCarousel";
+import { properties, testimonials, faqs } from "@/lib/db";
+import StatsComponent from "@/components/StatsComponent";
 
 export default async function Home() {
   const t = await getTranslations("HomePage");
-  const properties = [
-    {
-      image: "/images/property-1.png",
-      title: "Seaside Serenity House",
-      description:
-        "A stunning 4-bedroom 3-bathroom house in a peacful seaside location",
-      bathrooms: 3,
-      bedrooms: 4,
-      type: "House",
-      price: "550,000",
-    },
-    {
-      image: "/images/property-2.png",
-      title: "Mountain Retreat Villa",
-      description:
-        "A luxurious 5-bedroom 4-bathroom villa in a serene mountain location",
-      bathrooms: 4,
-      bedrooms: 5,
-      type: "Villa",
-      price: "1,250,000",
-    },
-    {
-      image: "/images/property-3.png",
-      title: "Cityscape Oasis Apartment",
-      description:
-        "A cozy 2-bedroom 1-bathroom apartment in a vibrant city location",
-      bathrooms: 1,
-      bedrooms: 2,
-      type: "Apartment",
-      price: "400,000",
-    },
-    {
-      image: "/images/property-4.png",
-      title: "Beachfront Retreat Villa",
-      description:
-        "A stunning 4-bedroom 3-bathroom villa in a peacful seaside location",
-      bathrooms: 3,
-      bedrooms: 4,
-      type: "Villa",
-      price: "550,000",
-    },
-  ];
-  const testimonials = [
-    {
-      rating: 5,
-      comment: "Exceptional Service!",
-      details:
-        "Our experiene with Estatein was outstanding. Their team's dedication and professionalism made finding our dream home a breeze. Highly recommended",
-      name: "John Doe",
-      image: "/images/testimonial-1.png",
-      location: "New York, USA",
-    },
-    {
-      rating: 4,
-      comment: "Great Experience!",
-      details:
-        "I had a great experience working with Estatein. They provided me with the perfect property for my needs. Highly satisfied with their service.",
-      name: "Jane Smith",
-      image: "/images/testimonial-2.png",
-      location: "London, UK",
-    },
-    {
-      rating: 5,
-      comment: "خدمات ممتازة!",
-      details:
-        "تم تجربة استثنائية عند استخدام Estatein. فريقهم يقدمون الخدمات المناسبة لما يحتاجون إليها. توصيات رائعة",
-      name: "أحمد",
-      image: "/images/testimonial-3.png",
-      location: "مصر",
-    },
-    {
-      rating: 4,
-      comment: "تجربة رائعة!",
-      details:
-        "تم تجربة استثنائية عند استخدام Estatein. فريقهم يقدمون الخدمات المناسبة لما يحتاجون إليها. توصيات رائعة",
-      name: "محمد",
-      image: "/images/testimonial-4.png",
-      location: "مصر",
-    },
-  ];
-  const faqs = [
-    {
-      question: "What is Estatein?",
-      answer:
-        "Estatein is a real estate platform that connects buyers and sellers. It provides a platform to buy and sell properties.",
-      readMore: "",
-    },
-    {
-      question: "How does Estatein work?",
-      answer:
-        "Estatein works by connecting buyers and sellers. Buyers can browse through properties and make offers, while sellers can list their properties for sale.",
-      readMore: "",
-    },
-    {
-      question: "What types of properties can I find on Estatein?",
-      answer:
-        "Estatein offers a wide range of properties, including houses, apartments, villas, and land.",
-      readMore: "",
-    },
-  ];
   return (
     <>
       {/* Hero Section */}
@@ -139,24 +41,15 @@ export default async function Home() {
               {t("browseProperties")}
             </button>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-5 w-full">
-            <div className="bg-bg-alt p-5 rounded-md border border-text-alt/20">
-              <p className="text-3xl font-semibold">200+</p>
-              <p className="text-text-alt">{t("happyCustomers")}</p>
-            </div>
-            <div className="bg-bg-alt p-5 rounded-md border border-text-alt/20">
-              <p className="text-3xl font-semibold">10k+</p>
-              <p className="text-text-alt">{t("propertiesForClients")}</p>
-            </div>
-            <div className="bg-bg-alt p-5 rounded-md border border-text-alt/20 col-span-2 md:col-span-1 text-center md:text-start">
-              <p className="text-3xl font-semibold">16+</p>
-              <p className="text-text-alt">{t("yearsOfExperience")}</p>
-            </div>
-          </div>
+          <StatsComponent
+            yearsOfExperience={t("stats.yearsOfExperience")}
+            happyCustomers={t("stats.happyCustomers")}
+            propertiesForClients={t("stats.propertiesForClients")}
+          />
         </div>
       </section>
       {/* Link cards */}
-      <section className="p-4 border border-5 border-bg-alt shadow-[inset_0px_0px_1px_1px_] shadow-text-alt/20 rounded-md">
+      <section className="p-4 brdr">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
           <div className="relative bg-bg-alt p-5 rounded-md border border-text-alt/10 text-center flex flex-col gap-5 items-center justify-center">
             <Link href="" className="absolute top-3 right-3">

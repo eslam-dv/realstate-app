@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
   /* config options here */
   experimental: {
     turbopackFileSystemCacheForDev: true,
-  },
+  }
 };
 
 const withNextIntl = createNextIntlPlugin();

@@ -15,13 +15,15 @@ import { useLocale, useTranslations } from "next-intl";
 type Props<T> = {
   items: T[];
   renderItem: (item: T) => React.ReactNode;
-  viewAll: string;
-  viewAllLink: string;
+  viewAll?: string;
+  viewAllLink?: string;
+  className?: string;
 };
 
 export default function CarouselSection({
   items,
   renderItem,
+  className,
   viewAll,
   viewAllLink,
 }: Props<T>) {
@@ -61,10 +63,7 @@ export default function CarouselSection({
       >
         <CarouselContent>
           {items.map((p, i) => (
-            <CarouselItem
-              key={i}
-              className="md:basis-3/5 lg:basis-1/2 xl:basis-1/3"
-            >
+            <CarouselItem key={i} className={`${className}`}>
               {renderItem(p)}
             </CarouselItem>
           ))}
@@ -75,13 +74,14 @@ export default function CarouselSection({
           <span className="text-white">{String(current).padStart(2, "0")}</span>{" "}
           {t("of")} {String(count).padStart(2, "0")}
         </span>
-        <Link
-          href={viewAllLink}
-          className="md:hidden bg-bg-alt py-3 px-5 rounded-md border border-text-alt/20 hover:bg-bg"
-        >
-          {viewAll}
-        </Link>
-
+        {viewAllLink && (
+          <Link
+            href={viewAllLink}
+            className="md:hidden bg-bg-alt py-3 px-5 rounded-md border border-text-alt/20 hover:bg-bg"
+          >
+            {viewAll}
+          </Link>
+        )}
         <div className="flex gap-2 items-center">
           <button
             onClick={() => api?.scrollPrev()}

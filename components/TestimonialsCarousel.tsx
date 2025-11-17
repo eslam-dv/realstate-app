@@ -13,6 +13,7 @@ export default function TestimonialsCarousel({
 }) {
   return (
     <CarouselSection
+      className="md:basis-3/5 lg:basis-1/2 xl:basis-1/3"
       items={items}
       viewAll={viewAll}
       viewAllLink={viewAllLink}
