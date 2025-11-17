@@ -1,7 +1,7 @@
 "use client";
 
 import CarouselSection from "./CarouselSection";
-import { ClientCard } from "./ClientCard";
+import ClientCard from "./ClientCard";
 
 export const ClientsCarousel = ({ items }: { items: T[] }) => {
   return (
