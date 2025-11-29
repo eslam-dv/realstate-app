@@ -1,12 +1,10 @@
 import { getTranslations } from "next-intl/server";
 import Image from "next/image";
-import Link from "next/link";
 import {
   BuildingStorefrontIcon,
   BanknotesIcon,
   BuildingOffice2Icon,
   SunIcon,
-  ArrowUpRightIcon,
 } from "@heroicons/react/24/solid";
 import SectionTitle from "@/components/SectionTitle";
 import PropertiesCarousel from "@/components/PropertyCarousel";
@@ -14,6 +12,7 @@ import TestimonialsCarousel from "@/components/TestimonialsCarousel";
 import FAQsCarousel from "@/components/FAQsCarousel";
 import { properties, testimonials, faqs } from "@/lib/db";
 import StatsComponent from "@/components/StatsComponent";
+import LinkCard from "@/components/LinkCard";
 
 export default async function Home() {
   const t = await getTranslations("HomePage");
@@ -51,34 +50,22 @@ export default async function Home() {
       {/* Link cards */}
       <section className="p-4 brdr">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
-          <div className="relative bg-bg-alt p-5 rounded-md border border-text-alt/10 text-center flex flex-col gap-5 items-center justify-center">
-            <Link href="" className="absolute top-3 right-3">
-              <ArrowUpRightIcon className="size-8 text-text-alt/40" />
-            </Link>
-            <BuildingStorefrontIcon className="size-8 text-brand" />
-            <p className="text-lg">{t("linkCards.find")}</p>
-          </div>
-          <div className="relative bg-bg-alt p-5 rounded-md border border-text-alt/10 text-center flex flex-col gap-5 items-center justify-center">
-            <Link href="" className="absolute top-3 right-3">
-              <ArrowUpRightIcon className="size-8 text-text-alt/40" />
-            </Link>
-            <BanknotesIcon className="size-8 text-brand" />
-            <p className="text-lg">{t("linkCards.unlock")}</p>
-          </div>
-          <div className="relative bg-bg-alt p-5 rounded-md border border-text-alt/10 text-center flex flex-col gap-5 items-center justify-center">
-            <Link href="" className="absolute top-3 right-3">
-              <ArrowUpRightIcon className="size-8 text-text-alt/40" />
-            </Link>
-            <BuildingOffice2Icon className="size-8 text-brand" />
-            <p className="text-lg">{t("linkCards.effortless")}</p>
-          </div>
-          <div className="relative bg-bg-alt p-5 rounded-md border border-text-alt/10 text-center flex flex-col gap-5 items-center justify-center">
-            <Link href="" className="absolute top-3 right-3">
-              <ArrowUpRightIcon className="size-8 text-text-alt/40" />
-            </Link>
-            <SunIcon className="size-8 text-brand" />
-            <p className="text-lg">{t("linkCards.smart")}</p>
-          </div>
+          <LinkCard
+            text={t("linkCards.find")}
+            icon={<BuildingStorefrontIcon className="size-8 text-brand" />}
+          />
+          <LinkCard
+            text={t("linkCards.unlock")}
+            icon={<BanknotesIcon className="size-8 text-brand" />}
+          />
+          <LinkCard
+            text={t("linkCards.effortless")}
+            icon={<BuildingOffice2Icon className="size-8 text-brand" />}
+          />
+          <LinkCard
+            text={t("linkCards.smart")}
+            icon={<SunIcon className="size-8 text-brand" />}
+          />
         </div>
       </section>
       {/* Featured Section */}
@@ -87,6 +74,7 @@ export default async function Home() {
           title={t("featuredSection.title")}
           description={t("featuredSection.description")}
           viewAll={t("featuredSection.viewAll")}
+          viewAllLink="#"
         />
 
         <PropertiesCarousel
@@ -101,6 +89,7 @@ export default async function Home() {
           title={t("testimonialsSection.title")}
           description={t("testimonialsSection.description")}
           viewAll={t("testimonialsSection.viewAll")}
+          viewAllLink="#"
         />
 
         <TestimonialsCarousel
@@ -115,6 +104,7 @@ export default async function Home() {
           title={t("FAQsSection.title")}
           description={t("FAQsSection.description")}
           viewAll={t("FAQsSection.viewAll")}
+          viewAllLink="#"
         />
 
         <FAQsCarousel

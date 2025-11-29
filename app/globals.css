@@ -27,6 +27,10 @@ body {
   @apply border border-5 border-bg-alt shadow-[inset_0px_0px_2px_2px_] shadow-text-alt/20 rounded-md;
 }
 
+.input{
+  @apply px-4 py-3 border border-text-alt/20 rounded-md outline-none bg-bg-alt;
+}
+
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);

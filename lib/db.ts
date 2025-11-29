@@ -8,6 +8,8 @@ export const properties = [
     bedrooms: 4,
     type: "House",
     price: "550,000",
+    location: "Alexandria, Egypt",
+    builtYear: 2015,
   },
   {
     image: "/images/property-2.png",
@@ -18,6 +20,8 @@ export const properties = [
     bedrooms: 5,
     type: "Villa",
     price: "1,250,000",
+    location: "Aswan, Egypt",
+    builtYear: 2018,
   },
   {
     image: "/images/property-3.png",
@@ -28,6 +32,8 @@ export const properties = [
     bedrooms: 2,
     type: "Apartment",
     price: "400,000",
+    location: "Cairo, Egypt",
+    builtYear: 2020,
   },
   {
     image: "/images/property-4.png",
@@ -38,8 +44,42 @@ export const properties = [
     bedrooms: 4,
     type: "Villa",
     price: "550,000",
+    location: "Sharm El-Sheikh, Egypt",
+    builtYear: 2016,
   },
 ];
+
+// Helper to extract unique values
+function unique(arr: T[]) {
+  return Array.from(new Set(arr));
+}
+
+// Location options (city names)
+export const locationOptions = unique(
+  properties.map((p) => p.location.split(",")[0].trim()),
+);
+
+// Property type options
+export const propertyTypeOptions = unique(properties.map((p) => p.type));
+
+// Pricing range options (based on price)
+export const pricingRangeOptions = [
+  "Under 500,000",
+  "500,000 - 1,000,000",
+  "Over 1,000,000",
+];
+
+// Property size options (by bedrooms)
+export const propertySizeOptions = [
+  "1-2 Bedrooms",
+  "3-4 Bedrooms",
+  "5+ Bedrooms",
+];
+
+// Built year options
+export const builtYearOptions = unique(
+  properties.map((p) => p.builtYear),
+).sort();
 
 export const testimonials = [
   {

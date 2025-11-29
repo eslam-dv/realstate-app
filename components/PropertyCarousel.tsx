@@ -8,8 +8,8 @@ export default function PropertiesCarousel({
   viewAllLink,
 }: {
   items: T[];
-  viewAll: string;
-  viewAllLink: string;
+  viewAll?: string;
+  viewAllLink?: string;
 }) {
   return (
     <CarouselSection
